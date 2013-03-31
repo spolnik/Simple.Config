@@ -7,7 +7,7 @@ namespace Simple.Config.Sample
     {
         static void Main()
         {
-            Console.WriteLine("NConfig Sample - Start");
+            Console.WriteLine("Simple.Config Sample - Start");
             Console.WriteLine();
 
             var configManager = ConfigManager.GetInstance();
@@ -36,7 +36,7 @@ namespace Simple.Config.Sample
 
             Console.WriteLine();
 
-            Console.WriteLine("NConfig Sample - End");
+            Console.WriteLine("Simple.Config Sample - End");
         }
     }
 }
