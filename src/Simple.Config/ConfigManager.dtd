@@ -1,0 +1,10 @@
+<!ELEMENT ConfigManager (namespace+)>
+<!ELEMENT namespace (property+)>
+<!ELEMENT property (value+)>
+<!ELEMENT value (#PCDATA)>
+<!ATTLIST namespace
+	name NMTOKEN #REQUIRED
+>
+<!ATTLIST property
+	name NMTOKEN #REQUIRED
+>

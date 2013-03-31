@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfigManager>
+	<namespace name="nsValue">	
+	    <Property name="StrValue">
+	        <Value>string</Value>
+	    </Property>
+	    <Property name="IntValue">
+	        <Value>7654321</Value>
+	    </Property>
+	    <Property name="DoubleValue">
+	        <Value>234.988776</Value>
+	    </Property>
+	    <Property name="StrValues">
+	        <Value>string1</Value>
+	        <Value>string2</Value>
+	        <Value>string3</Value>
+	    </Property>
+	    <Property name="IntValues">
+	        <Value>7654321</Value>
+	        <Value>7654325</Value>
+	        <Value>7654329</Value>
+	    </Property>
+	    <Property name="DoubleValues">
+	        <Value>234.988776</Value>
+	        <Value>345.988776</Value>
+	        <Value>456.988776</Value>
+	    </Property>
+	    <Property name="aaa">
+	    	<Value>ccccc</Value>
+	    </Property>
+	</namespace>
+	    
+</ConfigManager>

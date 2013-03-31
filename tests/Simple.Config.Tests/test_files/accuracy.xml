@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigManager>
+	<namespace name="AccuracyNs1">
+		<property name="a">
+			<value>1</value>
+		</property>
+		<property name="b">
+			<value>2</value>
+		</property>
+		<property name="c">
+			<value>3</value>
+		</property>
+	    <property name="instance_type">
+	        <value>System.Int32</value>
+	    </property>		
+    </namespace>
+	
+	<namespace name="AccuracyNs2">
+		<property name="a">
+			<value>1</value>
+		</property>
+		<property name="b">
+			<value>2</value>
+		</property>
+		<property name="c">
+			<value>3</value>
+		</property>
+	    <property name="instance_type">
+	        <value>System.String</value>
+	    </property>
+    </namespace>
+
+	<namespace name="AccuracyNs3">
+	    <property name="int_value">
+	        <value>12345</value>
+	    </property>
+	    <property name="int_values">
+	        <value>-1</value>
+	        <value>2</value>
+	        <value>3</value>
+	    </property>
+	    <property name="double_value">
+	        <value>0.1</value>
+	    </property>
+	    <property name="double_values">
+	        <value>-0.1</value>
+	        <value>0.1</value>
+	        <value>1e30</value>
+	    </property>
+	    <property name="string_value">
+	        <value>a</value>
+	    </property>
+	    <property name="string_values">
+	        <value>a</value>
+	        <value>b</value>
+	        <value>c</value>
+	    </property>
+    </namespace>
+</ConfigManager>

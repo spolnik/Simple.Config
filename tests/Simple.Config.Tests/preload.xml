@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfigManager>
+	<namespace name="Simple.Config.ConfigurationManager">
+		<property name="preload">
+			<value>test_files\test1.xml</value>
+			<value>test_files\test2.xml</value>
+		</property>
+    </namespace>
+</ConfigManager>

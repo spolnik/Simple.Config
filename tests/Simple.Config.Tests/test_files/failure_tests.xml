@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigManager>
+    <namespace name="FailureTests">
+        <property name="p1">
+            <value>v1</value>
+            <value>v2</value>
+        </property>
+        </namespace>
+</ConfigManager>

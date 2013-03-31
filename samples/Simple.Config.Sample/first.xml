@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE ConfigManager SYSTEM "ConfigManager.dtd">
+
+<ConfigManager>
+  <namespace name="Simple.Config.Sample">
+    <property name="Prop1">
+      <value>That's the value of Prop1</value>
+    </property>
+
+    <property name="Prop2">
+      <value>That's the value of Prop2</value>
+    </property>
+  </namespace>
+</ConfigManager>

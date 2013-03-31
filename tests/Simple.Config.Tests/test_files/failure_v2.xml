@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigManager>
+  <namespace name="NConfig.FailureTests.ConfigManagerV2FailureTests">
+    <property name="prop_name">
+    </property>
+  </namespace>
+</ConfigManager>
