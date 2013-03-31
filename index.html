@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Simple.Config by spolnik</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/spolnik/Simple.Config">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/spolnik/Simple.Config/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/spolnik/Simple.Config/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Simple.Config</h1>
+          <p>Configuration Manager for .Net</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/spolnik">spolnik</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Welcome to Simple.Config home page.</h1>
+
+<p>Simple, fast and powerful configuration manager for .net. </p>
+
+<p>Build your configurations from:</p>
+
+<ul>
+<li>Config Files</li>
+<li>Namespaces</li>
+<li>Properties</li>
+</ul><p>Load your configuration files from:</p>
+
+<ul>
+<li>http (xml)</li>
+<li>shared drives (xml, ini)</li>
+<li>local disks (xml, ini)</li>
+</ul><p>[<a href="https://github.com/spolnik/Simple.Config/blob/master/dist/Simple.Config_1.0_Release.zip?raw=true">Simple.Config 1.0</a>]</p>
+
+<h1>Sample Usage</h1>
+
+<h3>Preload file</h3>
+
+<p>Preload (preload.xml) file is allowing us on primary load of configuration files during application start. There are two locations where preload.xml file will be searched:</p>
+
+<ul>
+<li>preload.xml in application folder (default)</li>
+<li>using appSettings with key <em>Simple.Config.ConfigurationManager.Preload</em> allows us on setting custom path to preload.xml file, like in below app.config:</li>
+</ul><div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span>  <span class="na">key=</span><span class="s">"Simple.Config.ConfigurationManager.Preload"</span> <span class="na">value=</span><span class="s">"preload.xml"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/appSettings&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+
+<p>Below you can find preload.xml file used in sample:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;ConfigManager&gt;</span>
+    <span class="nt">&lt;namespace</span> <span class="na">name=</span><span class="s">"Simple.Config.ConfigurationManager"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"preload"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;value&gt;</span>first.xml<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;/namespace&gt;</span>
+<span class="nt">&lt;/ConfigManager&gt;</span>
+</pre></div>
+
+<h3>Configuration files</h3>
+
+<p>In sample we are using two configuration files, first.xml and second.ini. As you could see, Simple.Config is supporting two file types:</p>
+
+<ul>
+<li>xml files</li>
+<li>ini files</li>
+</ul><p>Below you can see first.xml:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="cp">&lt;!DOCTYPE ConfigManager SYSTEM "ConfigManager.dtd"&gt;</span>
+
+<span class="nt">&lt;ConfigManager&gt;</span>
+  <span class="nt">&lt;namespace</span> <span class="na">name=</span><span class="s">"Simple.Config.Sample"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"Prop1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;value&gt;</span>That's the value of Prop1<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"Prop2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;value&gt;</span>That's the value of Prop2<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+  <span class="nt">&lt;/namespace&gt;</span>
+<span class="nt">&lt;/ConfigManager&gt;</span>
+</pre></div>
+
+<p>Xml configuration files are following simple approach, you are starting the settings with <em>ConfigManager</em> tag, then you are creating namespaces, their properties and their values. Every property should have one or more values. Below you can see DTD schema file (ConfigManager.dtd) which is defining the template (it allows on intellisense support):</p>
+
+<div class="highlight"><pre><span class="k">&lt;!ELEMENT</span> <span class="nt">ConfigManager</span> <span class="o">(</span><span class="nt">namespace</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">namespace</span> <span class="o">(</span><span class="nt">property</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">property</span> <span class="o">(</span><span class="nt">value</span><span class="o">+)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ELEMENT</span> <span class="nt">value</span> <span class="o">(</span><span class="kc">#PCDATA</span><span class="o">)</span><span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">namespace</span>
+    <span class="na">name</span> <span class="kc">NMTOKEN</span> <span class="kc">#REQUIRED</span>
+<span class="k">&gt;</span>
+<span class="k">&lt;!ATTLIST</span> <span class="nt">property</span>
+    <span class="na">name</span> <span class="kc">NMTOKEN</span> <span class="kc">#REQUIRED</span>
+<span class="k">&gt;</span>
+</pre></div>
+
+<p>And the second configuration file, second.ini:</p>
+
+<div class="highlight"><pre><span class="k">[First Section]</span>
+<span class="na">PropA</span><span class="o">=</span><span class="s">val1</span>
+<span class="na">PropB</span><span class="o">=</span><span class="s">val2;val3</span>
+</pre></div>
+
+<p>The INI configuration file is a text file, containing the section lines ([section name]) and the set of properties. Every property is build from property name and the set of values (property_name=property_value1[;property_value2;...]).</p>
+
+<h3>Application code</h3>
+
+<div class="highlight"><pre><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Simple.Config Sample - Start"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">configManager</span> <span class="p">=</span> <span class="n">ConfigManager</span><span class="p">.</span><span class="n">GetInstance</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">sampleNamespace</span> <span class="p">=</span> <span class="n">configManager</span><span class="p">.</span><span class="n">GetNamespace</span><span class="p">(</span><span class="s">"NConfig.Sample"</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Namespace [xml]: "</span> <span class="p">+</span> <span class="n">sampleNamespace</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">property</span> <span class="k">in</span> <span class="n">sampleNamespace</span><span class="p">.</span><span class="n">Properties</span><span class="p">)</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Property: [{0} = {1}]"</span><span class="p">,</span> <span class="n">property</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">property</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">iniConfigFile</span> <span class="p">=</span> <span class="n">configManager</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="s">"second.ini"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">iniNamespace</span> <span class="p">=</span> <span class="n">iniConfigFile</span><span class="p">.</span><span class="n">Namespaces</span><span class="p">.</span><span class="n">First</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Namespace [ini]: "</span> <span class="p">+</span> <span class="n">iniNamespace</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">property</span> <span class="k">in</span> <span class="n">iniNamespace</span><span class="p">.</span><span class="n">Properties</span><span class="p">)</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Property: [{0} = {1}]"</span><span class="p">,</span> <span class="n">property</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">property</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">propertyWithManyValues</span> <span class="p">=</span> <span class="n">iniNamespace</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="k">value</span> <span class="k">in</span> <span class="n">propertyWithManyValues</span><span class="p">.</span><span class="n">Values</span><span class="p">)</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Property: [{0} = {1}]"</span><span class="p">,</span> <span class="n">propertyWithManyValues</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Simple.Config Sample - End"</span><span class="p">);</span>
+</pre></div>
+
+<h3>Output</h3>
+
+<div class="highlight"><pre>Simple.Config Sample - Start
+
+Namespace [xml]: Simple.Config.Sample
+Property: [Prop1 = That's the value of Prop1]
+Property: [Prop2 = That's the value of Prop2]
+
+Namespace [ini]: First Section
+Property: [PropA = val1]
+Property: [PropB = val2]
+
+Property: [PropB = val2]
+Property: [PropB = val3]
+
+Simple.Config Sample - End
+</pre></div>
+
+<h1>Support or Contact</h1>
+
+<p>Having trouble with Simple.Config? Raise the issue on <a href="https://github.com/spolnik/Simple.Config/issues">https://github.com/spolnik/Simple.Config/issues</a> and we’ll help you sort it out.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
